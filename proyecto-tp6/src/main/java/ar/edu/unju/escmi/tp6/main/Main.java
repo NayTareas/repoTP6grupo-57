@@ -187,7 +187,7 @@ public class Main {
         for (Credito credito : CollectionCredito.creditos) {
             if (credito.getTarjetaCredito() != null && credito.getTarjetaCredito().getCliente() != null &&
                 credito.getTarjetaCredito().getCliente().getDni() == dni) {
-                credito.mostarCredito(); // Muestra los detalles del crédito
+                credito.mostrarCredito(); // Muestra los detalles del crédito
                 tieneCreditos = true; // Marca que el cliente tiene al menos un crédito
             }
         }
