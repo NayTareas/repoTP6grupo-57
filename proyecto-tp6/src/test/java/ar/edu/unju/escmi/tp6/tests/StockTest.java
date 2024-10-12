@@ -14,16 +14,18 @@ public class StockTest {
 
     @BeforeEach
     public void setUp() {
-        producto = new Producto(1001L, "Microondas", 50000);
-        stock = new Stock(producto, 20);
+        
+        producto = new Producto(1001L, "Microondas", 50000.0, "Argentina");
+        stock = new Stock(20, producto); // Crear objeto Stock
         CollectionStock.agregarStock(stock);
     }
 
     @Test
     public void testDecrementaStock() {
         int cantidadComprada = 5;
-        CollectionStock.reducirStock(stock, cantidadComprada);
+        CollectionStock.reducirStock(stock, cantidadComprada); // Reducir el stock
 
+        // Verificar que la cantidad de stock se haya decrementado correctamente
         assertEquals(15, stock.getCantidad(), "El stock del producto debe decrementarse en la cantidad indicada.");
     }
 }
